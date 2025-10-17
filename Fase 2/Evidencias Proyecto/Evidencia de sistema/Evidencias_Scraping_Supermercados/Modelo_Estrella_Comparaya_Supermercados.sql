@@ -1,5 +1,5 @@
 -- ==========================================================
--- 🧱 ESTRUCTURA COMPLETA DEL MODELO DE DATOS (POSTGRESQL)
+-- ESTRUCTURA COMPLETA DEL MODELO DE DATOS (POSTGRESQL)
 -- ==========================================================
 -- Adaptado a los cambios recientes:
 --   - reemplazo de nombre_limpio → etiqueta_producto
@@ -8,7 +8,7 @@
 -- ==========================================================
 
 -- ==========================================================
--- 📦 LIMPIEZA PREVIA (opcional al regenerar)
+-- LIMPIEZA PREVIA (opcional al regenerar)
 -- ==========================================================
 DROP TABLE IF EXISTS hechos_precios CASCADE;
 DROP TABLE IF EXISTS dim_producto CASCADE;
@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS dim_cadena CASCADE;
 DROP TABLE IF EXISTS dim_unidad_medida CASCADE;
 
 -- ==========================================================
--- 🔸 DIMENSIONES
+-- DIMENSIONES
 -- ==========================================================
 
 CREATE TABLE dim_marca (
@@ -56,7 +56,7 @@ CREATE TABLE dim_subcategoria (
 CREATE TABLE dim_producto (
     id_producto SERIAL PRIMARY KEY,
     nombre_original VARCHAR(255) NOT NULL,
-    etiqueta_producto VARCHAR(255),       -- 🆕 reemplaza nombre_limpio
+    etiqueta_producto VARCHAR(255),       
     volumen NUMERIC(10,3),
     url VARCHAR(255) UNIQUE NOT NULL,
     create_at DATE DEFAULT CURRENT_DATE,
